@@ -30,6 +30,28 @@ int handle_d(va_list d)
 }
 
 /**
+ * handle_oct - prints decimal numbers in octal
+ *
+ * @oct: the decimal number to be printed in octal
+ * Return: the count of digits printed.
+ */
+int handle_oct(va_list oct)
+{
+	char tmp[100];
+	int num = 0;
+
+	num = va_arg(oct, unsigned int);
+
+	if (num == 0)
+	{
+		return (_puts("0"));
+	}
+	convert_bases(num, tmp, 8, 0);
+
+	return (_puts(tmp));
+}
+
+/**
   * handle_b - prints decimal no.s in binary
   * @b: decimal to be printed in binary
   *
