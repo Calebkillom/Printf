@@ -75,7 +75,7 @@ int handle_ascii(va_list ascii)
 		}
 		else
 		{
-			_putchar(*(str + i));
+			_printchar(*(str + i));
 			count++;
 		}
 	}
