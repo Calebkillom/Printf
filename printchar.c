@@ -23,6 +23,6 @@ int printchar(char c)
 int handle_c(va_list c)
 {
 	char character = (char) va_arg(c, int);
-	
-	return(printchar(character));
+
+	return (printchar(character));
 }

@@ -66,7 +66,7 @@ int handle_b(va_list b)
 	num = va_arg(b, unsigned int);
 
 	if (num == 0)
-		return(_puts(tmp));
+		return (_puts(tmp));
 
 	convert_bases(num, tmp, 2, 0);
 
