@@ -62,14 +62,14 @@ int handle_ascii(va_list ascii)
 	{
 		if (*(str + i) < 32 || *(str + i) >= 127)
 		{
-			_putchar('\\');
-			_putchar('x');
+			printchar('\\');
+			printchar('x');
 
 			count += 2;
 			convert_bases(*(str + i), tmp, 16, 1);
 
 			if (_strlen(tmp) < 2)
-				count += _putchar('0');
+				count += printchar('0');
 
 			count += _puts(tmp);
 		}
@@ -101,7 +101,7 @@ int handle_r(va_list r)
 
 	for (i = _strlen(str) - 1; i >= 0; i--)
 	{
-		count += _putchar(*(str + i));
+		count += printchar(*(str + i));
 	}
 
 	return (count);
