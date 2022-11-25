@@ -17,11 +17,11 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 		return (-1);
-
 	va_start(args, format);
+	
 	while (format[i])
 	{
-		for (i = 0; format[i] != '\0' && format[i]; i++)
+		for (; format[i] != '%' && format[i]; i++)
 		{
 			printchar(format[i]);
 			count++;
@@ -38,9 +38,9 @@ int _printf(const char *format, ...)
 		}
 		if (!format[i + 1])
 			return (-1);
-
 		printchar(format[i]);
 		count++;
+		
 		if (format[i + 1] == '%')
 			i += 2;
 		else
